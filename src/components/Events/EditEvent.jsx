@@ -92,7 +92,7 @@ export default function EditEvent() {
 }
 
 export function loader({ params }) {
-  queryClient.fetchQuery({
+  return queryClient.fetchQuery({
     queryKey: ["events", params.id],
     queryFn: ({ signal }) => fetchEvent({ signal, id: params.id }),
   });
